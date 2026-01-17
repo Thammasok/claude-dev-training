@@ -21,62 +21,26 @@ This is a full-stack application using Domain-Driven Design (DDD) with Next.js f
 
 #### Frontend (Next.js)
 
-- **Components**: Kebab Case (e.g., `user-profile.tsx`, `login-form.tsx`)
-- **Hooks**: Kebab Case with `use` prefix (e.g., `use-auth.ts`, `use-debounce.ts`)
-- **Utilities**: Kebab Case (e.g., `formatDate.ts`, `validateEmail.ts`)
-- **Types/Interfaces**: Kebab Case for files and PascalCase (e.g., `User`, `ApiResponse`)
+- **App**: Kebab Case and PascalCase (e.g., `page.tsx`, `layout.tsx`, `HomePage()`, `Layout()`)
+- **Components**: Kebab Case and PascalCase (e.g., `user-profile.tsx`, `login-form.tsx`, `UserProfile()`)
+- **Hooks**: Kebab Case with and Camel Case `use` prefix (e.g., `use-auth.ts`, `use-debounce.ts`, `useAuth()`, `useDebounce()`)
+- **Utilities**: Kebab Case and Camel Case (e.g., `format-date.ts`, `validate-email.ts`, `formatStringToDate()`, `validateEmail()`)
+- **Types/Interfaces**: PascalCase (e.g., `User`, `ApiResponse`)
 - **Constants**: UPPER_SNAKE_CASE (e.g., `API_BASE_URL`, `MAX_RETRY_COUNT`)
-- **Stores**: Kebab Case with `.store.ts` suffix (e.g., `auth.store.ts`)
-- **Services**: Kebab Case with `.service.ts` suffix (e.g., `user.service.ts`)
-- **Schemas**: Kebab Case with `.schema.ts` suffix (e.g., `auth.schema.ts`)
+- **Stores**: Kebab Case with `.store.ts` suffix and Camel Case `use` prefix and `Store` suffix (e.g., `auth.store.ts`, `useAuthStore()`)
+- **Services**: Kebab Case with `.service.ts` suffix and Camel Case (e.g., `user.service.ts`, `getUsers()`)
+- **Schemas**: Kebab Case with `.schema.ts` suffix and Camel Case with `Schema` suffix (e.g., `auth.schema.ts`, `userSchema`)
 
 #### Backend (Express.js)
 
-- **Entities**: PascalCase with `.entity.ts` suffix (e.g., `Account.entity.ts`)
-- **Value Objects**: PascalCase with `.vo.ts` suffix (e.g., `Email.vo.ts`)
-- **DTOs**: PascalCase with `.dto.ts` suffix (e.g., `CreateAccountDto`)
-- **Services**: PascalCase with `Service` suffix (e.g., `AccountService`)
+- **Shared**: PascalCase with `.entity.ts` suffix (e.g., `account.entity.ts`)
+- **Entities**: PascalCase with `.entity.ts` suffix (e.g., `account.entity.ts`)
+- **Value Objects**: PascalCase with `.vo.ts` suffix (e.g., `email.vo.ts`)
+- **Services**: Kebab Case with `.service` and PascalCase with `Service` suffix (e.g., `account.service.ts`, `AccountService`)
 - **Repositories**: PascalCase with `Repository` suffix (e.g., `AccountRepository`)
 - **Controllers**: PascalCase with `Controller` suffix (e.g., `AccountController`)
 - **Validators**: camelCase with `.validator.ts` suffix (e.g., `account.validator.ts`)
 - **Routes**: camelCase with `.routes.ts` suffix (e.g., `account.routes.ts`)
-
-### File Organization
-
-#### Frontend Structure
-
-```
-src/
-├── app/                    # Next.js App Router
-│   ├── (public)/          # Public routes
-│   └── (protected)/       # Protected routes
-├── components/
-│   ├── ui/                # shadcn/ui components
-│   └── common/            # Reusable components
-├── stores/                # Zustand state management
-├── services/              # API services
-├── schemas/               # Zod validation schemas
-├── hooks/                 # Custom React hooks
-├── lib/                   # Utilities and helpers
-└── types/                 # TypeScript type definitions
-```
-
-#### Backend Structure (Domain-Driven)
-
-```
-src/
-├── shared/                # Shared utilities, config, middleware
-├── domains/               # Business domains
-│   └── [domain-name]/
-│       ├── domain/        # Entities, value objects (business logic)
-│       ├── repository/    # Data access layer
-│       ├── service/       # Application services
-│       ├── controller/    # HTTP handlers
-│       ├── dto/           # Data transfer objects
-│       ├── validator/     # Input validation
-│       └── routes/        # Route definitions
-└── gateways/              # External service integrations
-```
 
 ## Domain-Driven Design Guidelines
 
@@ -189,7 +153,7 @@ src/
 - **Unit tests**: Domain layer (entities, value objects)
 - **Integration tests**: Repository layer (database operations)
 - **Component tests**: Service layer (business logic)
-- **E2E tests**: Full API flows
+- **APIs tests**: Full API flows follow E2E Flow
 
 ## Common Patterns
 

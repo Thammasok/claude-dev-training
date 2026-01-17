@@ -26,18 +26,6 @@ The application is organized into bounded contexts (domains) to facilitate futur
 - Form Handling: React Hook Form + Zod
 - HTTP Client: Axios
 
-#### Frontend Naming Conventions
-
-- **App**: Kebab Case and PascalCase (e.g., `page.tsx`, `layout.tsx`, `HomePage()`, `Layout()`)
-- **Components**: Kebab Case and PascalCase (e.g., `user-profile.tsx`, `login-form.tsx`, `UserProfile()`)
-- **Hooks**: Kebab Case with and Camel Case `use` prefix (e.g., `use-auth.ts`, `use-debounce.ts`, `useAuth()`, `useDebounce()`)
-- **Utilities**: Kebab Case and Camel Case (e.g., `format-date.ts`, `validate-email.ts`, `formatStringToDate()`, `validateEmail()`)
-- **Types/Interfaces**: PascalCase (e.g., `User`, `ApiResponse`)
-- **Constants**: UPPER_SNAKE_CASE (e.g., `API_BASE_URL`, `MAX_RETRY_COUNT`)
-- **Stores**: Kebab Case with `.store.ts` suffix and Camel Case `use` prefix and `Store` suffix (e.g., `auth.store.ts`, `useAuthStore()`)
-- **Services**: Kebab Case with `.service.ts` suffix and Camel Case (e.g., `user.service.ts`, `getUsers()`)
-- **Schemas**: Kebab Case with `.schema.ts` suffix and Camel Case with `Schema` suffix (e.g., `auth.schema.ts`, `userSchema`)
-
 #### Directory Structure (Next.js 16+, TypeScript)
 
 ```text
@@ -155,17 +143,6 @@ pnpm run format
 - Authentication: JWT
 - Database: Knex js
 - API Documentation: Swagger
-
-#### Backed Naming Conventions
-
-- **Shared**: PascalCase with `.entity.ts` suffix (e.g., `account.entity.ts`)
-- **Entities**: PascalCase with `.entity.ts` suffix (e.g., `account.entity.ts`)
-- **Value Objects**: PascalCase with `.vo.ts` suffix (e.g., `email.vo.ts`)
-- **Services**: Kebab Case with `.service` and PascalCase with `Service` suffix (e.g., `account.service.ts`, `AccountService`)
-- **Repositories**: PascalCase with `Repository` suffix (e.g., `AccountRepository`)
-- **Controllers**: PascalCase with `Controller` suffix (e.g., `AccountController`)
-- **Validators**: camelCase with `.validator.ts` suffix (e.g., `account.validator.ts`)
-- **Routes**: camelCase with `.routes.ts` suffix (e.g., `account.routes.ts`)
 
 #### Directory Structure (Domain-Driven)
 
