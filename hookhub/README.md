@@ -71,6 +71,8 @@ claude mcp add playwright npx @playwright/mcp@latest
 
 this store prompt form claude
 
+## Frontend
+
 1. senior frontend expert go to [cursor rule](https://cursor.directory/rules/next.js) select and copy context
 2. create file memory/frontend/CLAUDE.md and past it.
 3. test by prompt `what are you expert on?` on claude
@@ -105,4 +107,13 @@ Output
   For this specific project (HookHub), I can see you're working with Next.js 16+, TypeScript, and Tailwind CSS v4, which are all within my strong areas.
 
   What would you like help with?
+```
+
+## Spec
+
+1. add spec by use `/plan` by prompt it to create spec in `spec/CLAUDE.md`
+2. after claude code create `spec/CLAUDE.md` you can prompt it to implement
+
+```text
+can you please now implement the main page grid as specified in @../memory/spec/CLAUDE.md
 ```
